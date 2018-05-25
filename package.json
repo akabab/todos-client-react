@@ -11,6 +11,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "lint:css": "stylelint 'src/**/*.css'"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "stylelint": "^9.2.1",
+    "stylelint-config-recommended": "^2.1.0"
   }
 }
