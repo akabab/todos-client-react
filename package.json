@@ -2,6 +2,7 @@
   "name": "todos-client-react",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://akabab.github.io/todos-client-react/",
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
@@ -11,6 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "git push heroku master",
+    "predeploy:gh-pages": "npm run build",
+    "deploy:gh-pages": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "npm run lint:js && npm run lint:css",
@@ -21,16 +24,17 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.5",
+    "@storybook/addon-links": "^3.4.5",
+    "@storybook/react": "^3.4.5",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
+    "gh-pages": "^1.1.0",
     "stylelint": "^9.2.1",
-    "stylelint-config-recommended": "^2.1.0",
-    "@storybook/react": "^3.4.5",
-    "@storybook/addon-actions": "^3.4.5",
-    "@storybook/addon-links": "^3.4.5"
+    "stylelint-config-recommended": "^2.1.0"
   }
 }
