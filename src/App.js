@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import Todo from './components/Todo'
+
 
 class App extends Component {
+  state = {
+    todos: []
+  }
+
+  componentDidMount() {
+    fetch('https://wcs-livecodings-api.herokuapp.com/todos')
+      .then(res => res.json())
+      .then(todos => this.setState({ todos: todos }))
+  }
+
   render () {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">TODOS</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.state.todos.map(Todo)}
       </div>
     )
   }
