@@ -1,0 +1,14 @@
+.Button {
+  background-color: #EC368D;
+  border-color: #EC368D;
+  color: #FFF;
+  font-family: monospace;
+  font-size: 1rem;
+  border-radius: .1rem;
+  padding: .15rem .3rem;
+}
+
+.Button.link {
+  background-color: transparent;
+  border-color: transparent;
+}
