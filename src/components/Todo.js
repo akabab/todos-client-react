@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from './Button'
 import './Todo.css'
+import { actions } from '../store'
+
 
 const Todo = todo =>
   <div className="Todo" key={todo.id}>
@@ -11,7 +13,12 @@ const Todo = todo =>
       <p>by {todo.author} - {todo.createdAt}</p>
     </div>
     <div>
-      <Button>☆ {todo.stars.length}</Button>
+      <Button onClick={() => actions.addTodo({
+        ...todo,
+        id: todo.id + 42
+      })}>
+        ☆ {todo.stars.length}
+      </Button>
     </div>
   </div>
 
