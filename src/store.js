@@ -29,3 +29,7 @@ export const actions = {
   loadTodos: todos => store.dispatch({ type: 'LOAD_TODOS', todos })
 }
 
+fetch('https://wcs-livecodings-api.herokuapp.com/todos')
+  .then(res => res.json())
+  .then(todos => actions.loadTodos(todos))
+
