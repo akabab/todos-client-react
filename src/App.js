@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import Todo from './components/Todo'
-
+import { store } from './store'
 
 class App extends Component {
-  state = {
-    todos: []
-  }
+  constructor() {
+    super()
+    this.state = store.getState()
 
-  componentDidMount() {
-    fetch('https://wcs-livecodings-api.herokuapp.com/todos')
-      .then(res => res.json())
-      .then(todos => this.setState({ todos: todos }))
+    store.subscribe(() => {
+      this.setState(store.getState())
+    })
   }
 
   render () {
