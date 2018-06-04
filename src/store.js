@@ -4,3 +4,6 @@ const initialState = {
   todos: []
 }
 
+const reducer = (state, action) => {
+  return state
+}
